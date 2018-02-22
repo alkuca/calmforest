@@ -1,0 +1,1048 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>No title yet</title>
+    <!--  Music: Eclipse Of Sorrow by Danijel Kovacic  -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/scrolljs.css">
+    <script>document.documentElement.className = 'js';</script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/vendor/scrolloverflow.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+               ($(".back").fadeOut("medium"));
+                introRavenScale();
+                introfade();
+                scrollButton();
+
+        });
+
+
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                navigation: true,
+                lockAnchors:true,
+                loopHorizontal:false,
+                navigationPosition: 'right',
+                anchors: ['page1', 'page2', 'page3', 'page4','page5'],
+                onLeave: function(index, nextIndex, direction) {
+                    var leavingSection = $(this);
+
+
+
+
+                    if (index == 1 && direction == 'down') {
+                        featherFall();
+                        overlayDown();
+                        section1Show();
+                        section1FadeOut();
+                        canvasFadeOut();
+                        slide2FadeOut();
+                        document.getElementById("asd").style="opacity:1";
+                        $.fn.fullpage.moveTo('page1', 0);
+
+                    }
+
+                    if (index == 2 && direction == 'down') {
+                        section2FadeIn();
+                        section1Hide();
+                        overlayDown();
+                        laticeFly();
+
+
+                        function laticeFly() {
+
+                            var tween = new TimelineMax({repeat:-1})
+                                .add(TweenMax.to($("#latica1"),12, { ease: Power1.easeOut, x:400, y:45, rotation:120,scale:0.3 }),1.25)
+                                .add(TweenMax.to($("#latica2"), 12, { ease: Power2.easeOut, x:400, y:115, rotation:50,scale:0.3 }),2.45)
+                                .add(TweenMax.to($("#latica3"), 12, { ease: Power1.easeOut, x:400, y:55, rotation:150,scale:0.3 }),3.65)
+                                .add(TweenMax.to($("#latica4"), 12, { ease: Power2.easeOut, x:400, y:85, rotation:110,scale:0.3 }),2.75)
+                                .add(TweenMax.to($("#latica5"), 12, { ease: Power1.easeOut, x:400, y:25, rotation:40,scale:0.3 }),4.85)
+                                .add(TweenMax.to($("#latica6"), 12, { ease: Power2.easeOut, x:400, y:35, rotation:150 ,scale:0.3}),2)
+                                .add(TweenMax.to($("#latica7"), 12, { ease: Power1.easeOut, x:400, y:145, rotation:180,scale:0.3 }),5.20)
+                                .add(TweenMax.to($("#latica8"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:110,scale:0.3 }),3.40)
+                                .add(TweenMax.to($("#latica9"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:80,scale:0.3 }),3.70)
+                                .add(TweenMax.to($("#latica10"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:20,scale:0.3 }),4.10)
+                                .add(TweenMax.to($("#latica11"), 12, { ease: Power1.easeOut, x:400, y:95, rotation:80,scale:0.3 }),6.50)
+                                .add(TweenMax.to($("#latica12"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:90,scale:0.3 }),5.40)
+                                .add(TweenMax.to($("#latica13"), 12, { ease: Power1.easeOut, x:400, y:95, rotation:90,scale:0.3 }),5.90)
+                                .add(TweenMax.to($("#latica14"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:90,scale:0.3 }),8.40)
+                                .add(TweenMax.to($("#latica15"), 12, { ease: Power1.easeOut, x:400, y:95, rotation:20,scale:0.3 }),7.40)
+                                .add(TweenMax.to($("#latica16"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:140,scale:0.3 }),4.40)
+                                .add(TweenMax.to($("#latica17"), 12, { ease: Power1.easeOut, x:400, y:95, rotation:170,scale:0.3 }),7.10)
+                                .add(TweenMax.to($("#latica18"), 12, { ease: Power2.easeOut, x:400, y:95, rotation:190,scale:0.3 }),5.80);
+                        }
+
+
+
+
+
+
+                    }
+                    if (index == 3 && direction == 'down') {
+                        overlayDown();
+                        section2FadeOut();
+                        section3Fadein();
+
+                        TweenMax.set("ring",{xPercent:"-50%",yPercent:"-50%"})
+                        t4 = new TimelineMax();
+                        t4.to("#ring", 190, {ease: Power1.easeOut, rotation:360,delay:0.7,repeat: -1,yoyo: true});
+
+
+
+
+                    }
+
+                    if (index == 2 && direction == 'up'){
+                        overlayUp();
+                        section1Hide();
+                        section1FadeIn();
+
+                    }
+                    if (index == 3 && direction == 'up'){
+                        overlayUp();
+                        section1Show();
+                        section2FadeOut();
+
+
+                        (function ($) {
+
+                            var stripe = $('#clipPath rect'),
+                                stripeCount = stripe.length,
+                                gutter = 0.01,
+                                sw = (1/stripeCount) - ((stripeCount - 1)/stripeCount) * gutter,
+                                i = 0;
+
+                            stripe.each(function() {
+                                $(this).attr('width', '0.1');
+                                $(this).attr('x', i * (0.1 + gutter));
+                                i++
+                            });
+
+
+                            var t2 = new TimelineMax();
+                            t2.staggerFromTo(stripe, 1, {ease: Power3.easeOut, transformOrigin:'50% 50%',scaleX:0,delay:2 }, {transformOrigin:'50% 50%',scaleX:1,delay:1},0.15 )  ;
+
+
+
+                        })(jQuery);
+
+
+                    }
+                    if (index == 4 && direction == 'up'){
+                        overlayUp();
+                        section2FadeIn();
+                        section3FadeOut();
+
+                    }
+
+                    if (index == 4 && direction == 'down'){
+
+                        overlayDown();
+                        section4FadeIn();
+                        section3FadeOut();
+                        (function ($) {
+
+                            var stripe = $('#clipPath rect'),
+                                stripeCount = stripe.length,
+                                gutter = 0.01,
+                                sw = (1/stripeCount) - ((stripeCount - 1)/stripeCount) * gutter,
+                                i = 0;
+
+                            stripe.each(function() {
+                                $(this).attr('width', '0.1');
+                                $(this).attr('x', i * (0.1 + gutter));
+                                i++
+                            });
+
+
+                            var t2 = new TimelineMax();
+                            t2.staggerFromTo(stripe, 1, {ease: Power4.easeOut, transformOrigin:'50% 50%',scaleX:0,delay:2 }, {transformOrigin:'50% 50%',scaleX:1, delay:1},0.25 )  ;
+
+
+
+                        })(jQuery);
+                    }
+
+
+                    if (index == 5 && direction =='up'){
+                        overlayUp();
+                        section4FadeOut();
+                        section3Fadein();
+                    }
+
+
+                }
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+
+
+</head>
+<body id="body">
+
+<audio id="msc" preload="auto" loop="loop">
+    <source  src="EclipseOfSorrow.mp3" type="audio/mp3">
+</audio>
+
+<div class="back">
+<div class="preload">
+    <p id="loadingText">Loading</p>
+</div>
+</div>
+<svg id="asd"   class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path style="fill:#2E7D32;" class="shape-overlays__path"></path>
+    <path style="fill:#4CAF50;" class="shape-overlays__path"></path>
+    <path id="3" style="fill:white; " class="shape-overlays__path"></path>
+</svg>
+<canvas style="z-index: -1 !important; opacity:0;  position: fixed !important;  overflow: hidden; left:0;   top:0; transform: rotateX(-60deg); transform-origin: 50% 50%; " width="1920" id="mycanvas"></canvas>
+
+<div id="fullpage">
+
+
+    <div class="section active" id="section0">
+        <div id="cont0">
+        <div class="tekst">
+
+            <h1>Lorem ipsum</h1>
+            <p style="color:black !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor eros non iaculis volutpat. Nam iaculis at libero vel cursus. Proin mollis ligula libero, at finibus felis bibendum vel. Donec in risus malesuada, rutrum lacus sodales, blandit mauris. </p>
+
+            <div style="margin-top:50px;" id="moveTo" class="button">
+                <a  >Learn More<span class="shift">›</span></a>
+                <div class="mask"></div>
+            </div>
+        </div>
+            <span id="scrollbtn" class="scroll-btn" style="z-index: 200 !important;">
+                <a href="#">
+                    <span class="mouse">
+                        <span>
+                        </span>
+                    </span>
+                </a>
+            </span>
+
+
+        <img id="vrana" src="img/vrana3.svg" class="posvrana">
+
+        </div>
+
+        <div id="slide1" class="slide active"></div>
+        <div id="slide2" class="slide" style="position:relative;">
+            <div id="con2">
+                <img  src="img/nowhitewood2.png" class="pos2">
+                <img  src="img/backshift8.png" class="pos3">
+                <img  src="img/fog18.png" class="pos4">
+                <img id="fog30"  src="img/fog40.png" class="pos5">
+                <img id="fog31"  src="img/fog41.png" class="pos5">
+
+                <div id="moveToBack" class="button2">
+                    <a ><span class="shift2">‹</span>back</a>
+                    <div class="mask2"></div>
+                </div>
+
+
+            <div id="container"></div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div  class="section" id="section1">
+
+        <div class="tekst">
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor eros non iaculis volutpat. Nam iaculis at libero vel cursus. Proin mollis ligula libero, at finibus felis bibendum vel. Donec in risus malesuada, rutrum lacus sodales, blandit mauris. </p>
+
+        </div>
+
+
+
+            <div class="containfeather">
+            <img id="featherimg" src="img/feather.svg">
+            </div>
+
+        <svg width="0" height="0">
+            <defs>
+                <clipPath id="clipPath" clipPathUnits="objectBoundingBox">
+                    <rect id="1" x="0" y="0.1" width="1" height="0.55" transform="rotate(15 0 0.85)"/>
+                    <rect x="0" y="0" width="1" height="0.7"transform="rotate(15 0 0.85)" />
+                    <rect x="0" y="0.15" width="1" height="0.5" transform="rotate(15 0 0.85)" />
+                    <rect x="0" y="0.05" width="1" height="0.65" transform="rotate(15 0 0.85)" />
+                    <rect x="0" y="0.1" width="1" height="0.5" transform="rotate(15 0 0.85)" />
+                </clipPath>
+            </defs>
+        </svg>
+
+
+
+
+
+    </div>
+    <div class="section" id="section2">
+
+        <div class="tekst">
+            <h1 id="meow">Lorem ipsum</h1>
+            <p id="meow2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor eros non iaculis volutpat. Nam iaculis at libero vel cursus. Proin mollis ligula libero, at finibus felis bibendum vel. Donec in risus malesuada, rutrum lacus sodales, blandit mauris. </p>
+
+        </div>
+
+
+        <svg version="1.1" id="flora" class="pos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 352.5 264" style="enable-background:new 0 0 352.5 264;" xml:space="preserve">
+            <defs>
+    <linearGradient id="left-to-right">
+
+      <stop offset="0" stop-color="#4DAF4C">
+        <animate  dur="4s" attributeName="offset" fill="freeze" from="0" to="1" />
+      </stop>
+      <stop offset="0" stop-color="#fff">
+        <animate  dur="4s" attributeName="offset" fill="freeze" from="0" to="1" />
+      </stop>
+
+    </linearGradient>
+  </defs>
+<style type="text/css">
+
+
+
+</style>
+            <g id="sve">
+<path id="latica1" class="st7" d="M69,117.4c1.6,1.2,2.6,1.4,4.3,1.2c4,0.5,7.2,0.2,11.6,1.3l0.5,0.1c-1,0.1-1.4,0.8-1.9,1.9
+	c1-1.1,1.2-1.4,2.4-1.7l0,0c-1.7,0.6-2.8,2.4-2.8,4.1c0.3-1,0.7-2,1.4-2.7c-0.8,1.7,0,4.4,1.5,5.9l1.5,1.1l-1.4-1.3
+	c-1.5-1.7-2.5-4.6-0.9-6.4c-0.9,1.2-1,2.9,0.3,4.2c-0.8-1.6-0.8-2.8,0-4c-0.7,1.5,0,3.8,1.3,4.9l1,0.7c-1.8-1.6-3.2-4.1-1.7-6.3
+	c-1.2,2.1,0.2,5.4,2.5,5.6c-2-0.8-2.8-2.7-2.6-4.7c-0.1,2.5,2.5,5.3,5,4.4c-2.9,0.3-5-2.4-4.8-5.1c0,0,0,0,0,0.1
+	c0.4,2.4,3.8,4.3,5.9,3.3c-2.1,0.3-4.3-0.7-5.4-2.5c1.3,1.3,4.4,2.6,6.8,1.3l-0.6,0.2c-2,0.5-5.9-0.6-6.7-2.5c0,0,0,0,0.1,0
+	c1.2,1.3,2.6,1.2,4.3,0.9c-1.8-0.1-2.8,0-4.3-1c0,0,0,0,0,0c0,0,0,0,0-0.1c2.1-0.2,3.2,0.1,5.3,0.6c-2.1-0.8-3.1-1.3-5.3-0.7
+	c0,0,0,0,0-0.1c1.1-0.5,2.3-0.9,3.4-0.3c-0.7-1-2.6-0.6-3.5,0.3c0,0,0,0,0,0c0,0,0,0,0-0.1c2-1.7,4.9-1.9,6.8,0.2
+	c-1.3-2.4-4.9-2.3-6.5-0.6c1.9-2.3,5.2-2.7,8-2.3l-1.2-0.4c-2.3-0.4-5.8,0.5-7,2.7c0.6-2,2.6-3,4.7-3.4c-1.8-0.1-4.1,1-4.7,2.7
+	c0-0.1,0-0.3,0.1-0.4c0.7-2,2.9-3.5,4.9-3.3c-1.3-0.5-3.2,0.3-4.3,1.6c0.9-1.6,2.5-2.6,4.9-2.1c-2.6-1.2-5.1,0.7-5.7,3.4
+	c-0.1,0.3-0.2,0.6-0.2,0.9c0-2.8,2.2-5.5,4.9-6.1l1-0.1c-1.2,0-1.7,0-2.8,0.5c-2.1,1-3.8,4-3.3,6.1c-0.6-2-0.6-4.7,1-6.1
+	c-2.1,1-2,4.7-0.8,6.6c-0.7-0.7-0.9-1.6-1.2-2.6c0.1,0.6,0.1,2,0.8,2.5l-0.7-0.2c-4.4-1.1-7.6-0.9-11.6-1.3
+	C71.9,117.5,71,117.3,69,117.4L69,117.4z M85.9,120.3L85.9,120.3L85.9,120.3L85.9,120.3L85.9,120.3z"/>
+<path id="latica2" class="st7" d="M65.8,110.6c1.7-1.1,1.8-1.7,2.3-3.3c2.3-3.6,4.5-6.4,5.1-10.7c1,1.3,3.3,1.9,4,0.5c-0.9,0.8-2.2,0.6-3.2,0
+	c0.8,0.3,1.7,0.4,2,0c-1.1,0.1-1.9-0.1-2.8-0.6c2,1,4,0.4,5.1-1.6c-1.5,1.7-3,2.2-5.1,1.6l0,0c2.1,0.2,4.7-1.3,4.8-3.6
+	c-0.7,2.2-2.6,3.4-4.8,3.6l0,0c2.1-0.5,3.3-2.1,3.5-4.3c-0.6,2.1-1.5,3.3-3.5,4.3c0,0,0,0,0,0c1.4-0.8,2.4-2.8,2.1-4.4
+	c-0.2,1.5-1.1,3.2-2.2,4.3c0,0,0,0-0.1,0c0.6-1.4,1.8-4.3,0.5-5.7c-0.1-0.1-0.1-0.1-0.3-0.2c1.1,1.4,0.2,4.3-0.3,5.8c0,0,0,0,0,0
+	c0,0,0,0,0,0c-0.2-1.4-0.3-2.6,0-4c-0.8,1.3-0.6,2.7-0.1,4l0,0c-0.8-1.1-1.8-3.5-0.9-4.6c-0.9,0.2-0.8,3.5,0.8,4.6l0,0
+	c-2.1-1.7-3.2-3.1-3-6c-0.6,2.8,0.6,4.7,3,6c0,0,0,0,0,0c-1.9-0.9-4.9-3.3-5.1-5.5c-0.3,2.1,3,4.8,5.1,5.5l0,0
+	c-2.3-0.8-3.8-1.9-5.4-3.8c1.3,2.1,2.8,3.4,5.2,3.8c-1.5-0.1-3-0.6-4.1-1.6l0.4,0.6c0.7,0.7,2.9,1.3,3.7,1.2
+	c-0.8,0.4-1.5,0.4-2.5,0.5c1,0.2,2,0.3,2.7-0.5c-0.5,4.3-2.7,7.1-4.9,10.5C66.5,108.5,66.8,108.6,65.8,110.6L65.8,110.6z"/>
+<path id="latica3" class="st2" d="M71.3,112.8c1.4-0.6,1.9-1.2,2.6-2.4c1.3-1.4,3.1-2.9,4.5-4.2c1.1-1,2.3-2,3.4-2.9c-0.3,0.8,0.4,1.7,0.9,2.2
+	c-0.6-0.9-0.9-1.4-0.8-2.4l0,0c0.6,3.1,5.2,3.6,7.1,1.8c-0.5,0.3-0.7,0.4-1.2,0.6c-1.9,0.5-4.3,0.1-5.4-1.6c1,1.3,3.2,2.2,4.5,1
+	c-1.7,0.9-4-0.2-4.9-1.8l0,0c0,0,0,0,0,0c1.8,2.1,3.7,2.3,5.9,0.6c-2.1,1.2-3.5,1.2-5.2,0c1.7,0.9,4.6,0.1,5.5-1.9
+	c-1.1,1.5-3,2.3-4.8,2c1.2,0.1,2.5-0.5,2.9-1.5c-1.1,1.2-3,1.7-4.5,0.8l0,0c1.6,0.6,3.6-0.1,4.7-1.5l0.6-0.9
+	c-1.4,1.7-2.9,2.7-5.2,2.4c0,0,0,0,0,0c1.6-0.3,1.9-0.5,3.2-1.6c-1.3,0.8-1.9,1-3.2,1.6c0,0,0,0,0,0c0.6-0.7,1-1.2,1.6-1.8
+	c-1.1,0.6-1.2,0.7-1.7,1.8c0,0,0,0,0,0c0.5-2,2.5-3.9,4.5-4.1c-2.1-0.2-4.6,2.4-4.5,4.1c0,0,0,0,0,0c0-1.4,0.5-2.2,1.4-3.4
+	c-1,0.9-1.8,2-1.4,3.4c0,0,0,0,0,0c-0.6-2.1,0.2-3.2,1.6-4.8c-1.6,1.3-2.5,2.8-1.6,4.7c-1.2-2.2-0.2-5.1,1.9-6.4
+	c-2,0.8-3.2,3.6-2.4,5.6c-0.8-1.7-0.4-3.3,0.7-5.1c-1.7,1.9-2,4.1-0.2,6c-2.1-1.9-2.5-5.7-1.1-8.2c-1.6,2-1.3,5.9,0.5,7.7
+	c-1.4-1.3-2-3-1.8-4.9c-0.5,2.2,0.4,4.4,2.4,5.4c-1.1-0.3-1.9-1-2.6-1.9c0.6,1,1.4,2,2.6,1.9c-1.2,1-2.4,2-3.6,3
+	c-1.4,1.3-3.1,2.8-4.5,4.2C72.5,110.9,72,111.5,71.3,112.8L71.3,112.8z"/>
+<path id="latica4" class="st3" d="M72.1,117.5c1.3,0.7,1.7,1.3,2.3,2.5c1.1,1.4,2.7,3,3.8,4.3c0.9,1,2,2,3,3c-0.2-0.8,0.5-1.6,1.1-2
+	c-0.6,0.8-1,1.3-0.9,2.2l0,0c0.9-2.8,5.3-2.9,6.9-1.1c-0.4-0.3-0.6-0.5-1.1-0.7c-1.8-0.7-4-0.5-5.3,1c1-1.1,3.2-1.8,4.4-0.6
+	c-1.5-1-3.8-0.2-4.8,1.3l0,0c0,0,0,0,0,0c1.9-1.8,3.7-1.9,5.7,0c-1.9-1.4-3.2-1.5-4.9-0.5c1.7-0.7,4.3,0.3,5.1,2.3
+	c-0.9-1.5-2.7-2.4-4.3-2.3c1.1,0,2.3,0.7,2.6,1.7c-1-1.3-2.7-1.9-4.2-1.1l0,0c1.6-0.4,3.4,0.4,4.3,1.8l0.4,0.9
+	c-1.2-1.8-2.5-2.8-4.7-2.7c0,0,0,0,0,0c1.5,0.4,1.7,0.7,2.9,1.8c-1.2-0.8-1.7-1.1-2.9-1.8c0,0,0,0,0,0c0.5,0.7,0.8,1.2,1.4,1.9
+	c-1-0.7-1.1-0.8-1.4-1.9c0,0,0,0,0,0c0.3,1.9,2,3.9,3.9,4.3c-2,0-4.1-2.7-3.9-4.3c0,0,0,0,0,0c-0.1,1.3,0.3,2.2,1,3.3
+	c-0.9-1-1.5-2-1-3.3c0,0,0,0,0,0c-0.7,1.9-0.1,3.1,1.1,4.7c-1.4-1.3-2.1-2.9-1.1-4.6c-1.3,2-0.6,4.8,1.2,6.3
+	c-1.8-0.9-2.7-3.7-1.8-5.5c-0.9,1.5-0.7,3.1,0.2,4.8c-1.4-1.9-1.5-4.1,0.3-5.7c-2.2,1.6-2.9,5.2-1.8,7.6c-1.3-2-0.7-5.7,1.2-7.3
+	c-1.4,1.1-2.2,2.6-2.2,4.5c-0.3-2.1,0.8-4.2,2.7-4.9c-1.1,0.2-1.9,0.8-2.7,1.5c0.6-0.9,1.5-1.7,2.7-1.6c-1-1-2.1-2.1-3.1-3.2
+	c-1.2-1.3-2.7-2.9-3.9-4.4C73.1,119.4,72.7,118.8,72.1,117.5L72.1,117.5z"/>
+<path id="latica5" class="st4" d="M66.3,110.8c2.8-0.9,3.7-1.2,5.4-3.3c3-2,4.4-3.1,7.5-6.3c-0.3,1.6,1.5,4.2,2.5,3.6c-1.1-0.1-1.9-1.7-2.2-3
+	c0.4,0.9,1.5,1.5,2.2,1.8c-1-0.8-1.8-1.5-2.3-2.6l0,0c1.7,2.7,5.8,2.8,8.5,1.4c-3,1-6.1,0.8-8.5-1.4l0,0c2.1,1.6,4,1.5,6.1-0.1
+	c-2.4,1.2-3.7,1.2-6,0.1c0,0,0,0,0,0c3.8,0.6,6.9-0.2,7.7-4.3c-1.5,3.8-3.7,4.3-7.7,4.2c0,0,0,0,0-0.1c2.3-0.6,3-0.7,4.8-2.5
+	c-1.7,1.1-3.1,1.6-4.8,2.4c0,0,0,0,0-0.1c1.5-2,1.6-2.2,3.8-3.9c-2.4,1.3-2.7,1.5-3.8,3.9c0,0,0,0,0,0c0.6-3,1.4-4.8,4-6.7
+	c-2.9,1.4-3.8,3.5-4,6.6c0,0,0,0-0.1,0c-0.5-3.4-0.1-6.9,2.1-9.6c-2.7,2.3-3.2,6.4-2.2,9.6c0,0,0,0,0,0c-0.8-1.6-1.1-4.1-1.3-5.8
+	c-0.1,1.7,0,4.4,1.3,5.8c0,0,0,0,0,0l0,0c-1.9-1.9-3.3-7.2-1.4-9.4c-2.3,1.4-1,7.8,1.4,9.4c-1-0.5-1.4-1.2-2.1-2.2
+	c0.2,0.6,0.7,1.8,1.5,2.2c-1-0.3-1.8-1.1-2.6-1.8c0.5,0.8,1.7,2.2,2.9,2.1c-3.1,3.1-4.5,4.2-7.4,6.1
+	C69.3,108.1,68.3,109.1,66.3,110.8L66.3,110.8z"/>
+<path id="latica6" class="st5" d="M71.6,113.8c1.6-1.6,2.2-2.2,4.2-2.7c2.5-1.4,3.7-2,7.1-3.1c-1.2-0.4-2.4-2.5-1.6-3c-0.3,0.8,0.5,1.9,1.3,2.6
+	c-0.5-0.6-0.5-1.6-0.5-2.2c0.2,1,0.4,1.8,1,2.5l0,0c-1.3-2.2,0.1-5.1,2-6.5c-1.7,1.8-2.8,4-2,6.4l0,0c-0.4-2,0.4-3.3,2.2-4.2
+	c-1.7,1.3-2.1,2.2-2.2,4.2c0,0,0,0,0,0c0.9-2.9,2.5-4.8,5.7-3.9c-3.2-0.3-4.3,1.1-5.7,3.9c0,0,0,0,0,0c1.2-1.4,1.6-1.9,3.4-2.5
+	c-1.4,0.8-2.2,1.6-3.4,2.5c0,0,0,0,0,0c2-0.4,2.1-0.3,4.1-1.3c-1.8,1.2-2,1.4-4.1,1.3c0,0,0,0,0,0c2.4,0.6,3.9,0.7,6.1-0.5
+	c-2,1.5-3.8,1.4-6.1,0.5c0,0,0,0,0,0c2.2,1.6,4.8,2.5,7.5,1.9c-2.6,1.1-5.6,0-7.5-1.9c0,0,0,0,0,0c0.9,1.1,2.4,2.2,3.6,3
+	c-1.3-0.5-3.1-1.6-3.6-3c0,0,0,0,0,0l0,0c0.7,2,3.9,4.8,6.1,4.3c-1.8,1.1-5.8-2.1-6.1-4.3c0,0.9,0.3,1.4,0.8,2.2
+	c-0.4-0.4-1-1.1-1-1.8c-0.1,0.8,0.1,1.6,0.3,2.4c-0.4-0.7-0.9-2-0.4-2.8c-3.3,1.1-4.5,1.7-6.9,3C74.5,112.6,73.5,113,71.6,113.8
+	L71.6,113.8z"/>
+<path id="latica7" class="st6" d="M72.8,116.7c2.2,0,2.9,0.1,4.5,1.1c2.5,0.8,3.7,1.2,6.7,2.8c-0.5-1.1,0.2-3.3,1-3.1c-0.8,0.3-1,1.6-0.9,2.6
+	c0.1-0.7,0.7-1.4,1.2-1.7c-0.5,0.8-0.9,1.4-1,2.3l0,0c0.7-2.2,3.5-3.2,5.7-2.8c-2.3,0-4.5,0.7-5.7,2.8l0,0c1.1-1.5,2.5-1.9,4.3-1.2
+	c-1.9-0.3-2.9-0.1-4.3,1.2c0,0,0,0,0,0c2.5-1.2,4.9-1.4,6.3,1.4c-1.9-2.4-3.5-2.3-6.3-1.3c0,0,0,0,0,0c1.7-0.1,2.3-0.1,3.9,0.7
+	c-1.4-0.4-2.5-0.4-3.9-0.7c0,0,0,0,0,0c1.5,1.1,1.6,1.2,3.5,1.9c-2-0.4-2.2-0.4-3.5-1.9c0,0,0,0,0,0c1.1,2,2,3.1,4.2,3.8
+	c-2.4-0.4-3.4-1.7-4.3-3.8c0,0,0,0,0,0c0.4,2.5,1.4,4.9,3.6,6.3c-2.4-1-3.6-3.8-3.6-6.3c0,0,0,0,0,0c-0.2,1.3,0.1,3.1,0.3,4.4
+	c-0.5-1.2-0.9-3.1-0.3-4.4c0,0,0,0,0,0l0,0c-0.9,1.8-0.8,5.8,1,6.9c-1.9-0.5-2.3-5.2-1-6.9c-0.6,0.6-0.7,1.1-1,2
+	c0-0.5,0.1-1.4,0.6-1.9c-0.6,0.4-1,1.1-1.5,1.8c0.2-0.7,0.8-1.9,1.6-2.1c-2.8-1.5-4-2-6.5-2.7C75.5,117.9,74.5,117.5,72.8,116.7
+	L72.8,116.7z"/>
+<g>
+	<path id="latica9" class="st7" d="M65.4,111.9c0.8-2.4,1.1-3.2,0.7-5.4c0.2-3.1,0.2-4.6-0.3-8.3c0.9,1,3.6,1.2,3.7,0.2c-0.7,0.7-2.1,0.4-3.2-0.1
+		c0.8,0.2,1.8-0.2,2.4-0.5c-1.1,0.2-1.9,0.4-2.9,0.1l0,0c2.7,0.2,4.9-2.4,5.4-5c-0.9,2.5-2.7,4.5-5.4,4.9l0,0
+		c2.1-0.6,3.1-1.9,3.1-4.1c-0.5,2.2-1.1,3.1-3.1,4.1c0,0,0,0,0,0c2.4-2.2,3.5-4.7,1.2-7.4c1.8,3,1,4.7-1.2,7.4c0,0,0,0,0,0
+		c0.8-1.8,1.1-2.4,0.9-4.5c-0.2,1.7-0.6,2.9-0.9,4.5c0,0,0,0-0.1,0c-0.6-2.1-0.6-2.2-0.6-4.6c-0.4,2.3-0.4,2.6,0.6,4.6c0,0,0,0,0,0
+		c-1.7-2-2.5-3.5-2.4-6.2c-0.6,2.7,0.4,4.4,2.3,6.2c0,0,0,0,0,0c-2.5-1.4-4.7-3.5-5.3-6.5c0.1,3,2.6,5.5,5.3,6.5c0,0,0,0,0,0
+		c-1.5-0.3-3.3-1.4-4.6-2.1c1.1,1,3,2.3,4.6,2.2c0,0,0,0,0,0l0,0c-2.3,0.3-6.5-1.6-7-3.9c-0.3,2.2,4.7,4.7,7,4
+		c-0.9,0.4-1.5,0.3-2.6,0.3c0.5,0.2,1.6,0.5,2.2,0.2c-0.7,0.5-1.7,0.6-2.5,0.8c0.8,0,2.4,0,2.9-0.9c0.5,3.7,0.4,5.2,0.2,8.2
+		C65.2,108.5,65.3,109.7,65.4,111.9L65.4,111.9z"/>
+	<g>
+		<path id="drzak"   d="M30.2,236.4c9.4-24.1,3.2-33.8,7.7-64.4c2.8-18.8,13.2-35.2,24.8-50c-1.3,2.2-3.2,4.9-3.5,6.8
+			c1.7-2.6,4.9-5.6,6.1-6.8c-2.2,3-2.6,4.3-2.7,7.8c2.2-6.2,6.5-10.5,9-11.1c1.2,0.3,2.2,0.2,2.7-0.4c1-1.3-0.6-4.4-3.7-7
+			c-3.1-2.6-6.4-3.6-7.4-2.3c-0.4,0.5-0.4,1.3,0,2.3c0.4,3.4-5.1,9.1-11,11.5c4.2-0.1,6.2-1.4,7.8-3.1c-1.1,2.3-3.3,2.9-5.2,5.8
+			c1.2-0.9,3-2.3,4.6-3.6c-11.3,14.8-21.3,30.9-24.1,49.6c-4.6,30.6,1.8,40.3-8,64.8H30.2L30.2,236.4z"/>
+
+		<path id="latica10" class="st7" d="M71.7,116.7c-0.6,1.6-0.4,2.5,0,3.9c0.1,2.1,0.1,4.7,0.1,6.7c0,1.6-0.1,3.3-0.1,4.9c-0.4-0.9-1.7-1-2.5-0.9
+			c1.2,0.2,1.8,0.3,2.5,1.1l0,0c-3-1.8-6.8,1.6-6.7,4.5c0.1-0.6,0.1-0.9,0.4-1.5c1-2,3.1-3.6,5.4-3.3c-1.8-0.2-4.2,1-4.2,2.9
+			c0.5-2.1,3.1-3.1,5.1-2.6l0,0c0,0,0,0,0,0c-3,0-4.7,1.3-4.9,4.4c0.5-2.7,1.6-3.7,3.8-4.2c-2,0.7-3.5,3.7-2.6,5.9
+			c-0.4-2,0.4-4.2,1.9-5.3c-0.9,0.9-1.4,2.4-1,3.5c-0.2-1.9,0.8-3.7,2.7-4.2l0,0c-1.7,0.9-2.6,3-2.3,4.9l0.3,1.1
+			c-0.4-2.5-0.1-4.4,1.9-6c0,0,0,0,0,0c-1,1.5-1,1.9-1,3.8c0.4-1.6,0.6-2.3,1.1-3.8c0,0,0,0,0,0c0.1,1,0.2,1.7,0.3,2.7
+			c0.3-1.4,0.3-1.5-0.2-2.7c0,0,0,0,0,0c1.2,1.8,1.3,4.9,0,6.7c1.7-1.6,1.4-5.5,0-6.8c0,0,0,0,0,0c1.2,1,1.4,2.1,1.8,3.6
+			c0-1.5-0.3-2.9-1.8-3.7c0,0,0,0,0,0c2.2,1.1,2.5,2.5,2.8,4.8c0.2-2.3-0.4-4.1-2.7-4.8c2.7,0.7,4.3,3.6,3.8,6.3
+			c0.9-2.2-0.6-5.2-2.8-6.1c2,0.6,3,2.1,3.6,4.3c-0.3-2.7-1.9-4.7-4.7-4.6c3.1-0.3,6.5,2.2,7.5,5.1c-0.4-2.7-3.9-5.4-6.7-5.3
+			c2.1-0.2,3.9,0.6,5.4,2.1c-1.4-2.1-3.9-3-6.2-2.1c1.1-0.7,2.2-0.8,3.5-0.8c-1.2-0.3-2.7-0.3-3.5,0.7c0.1-1.7,0.2-3.5,0.1-5.2
+			c0-2,0-4.6-0.1-6.8C72.3,119.1,72.2,118.3,71.7,116.7L71.7,116.7z"/>
+		<path id="latica11" class="st7" d="M71.2,115.4c-0.2,2.4-0.3,3.2-1.5,4.9c-1,2.7-1.6,4-3.5,7.1c1.2-0.5,3.6,0.4,3.3,1.3
+			c-0.3-0.8-1.7-1.2-2.8-1.2c0.7,0.2,1.5,0.9,1.8,1.4c-0.8-0.6-1.5-1.1-2.5-1.3l0,0c2.4,0.9,3.3,4,2.7,6.4c0.2-2.5-0.5-5-2.7-6.4
+			l0,0c1.6,1.3,1.9,2.9,1,4.8c0.4-2.1,0.2-3.1-1.1-4.8c0,0,0,0,0,0c1.2,2.9,1.2,5.4-1.9,6.8c2.7-1.9,2.7-3.7,1.9-6.8c0,0,0,0,0,0
+			c-0.1,1.9,0,2.5-1,4.2c0.5-1.5,0.7-2.7,1-4.2c0,0,0,0,0,0c-1.3,1.6-1.4,1.6-2.3,3.7c0.6-2.1,0.6-2.4,2.3-3.7c0,0,0,0,0,0
+			c-2.3,1.1-3.5,2-4.5,4.4c0.6-2.6,2.1-3.7,4.4-4.4c0,0,0,0,0,0c-2.8,0.2-5.5,1.2-7.1,3.5c1.3-2.5,4.4-3.7,7.1-3.5c0,0,0,0,0,0
+			c-1.4-0.3-3.4-0.1-4.8,0.1c1.3-0.4,3.5-0.8,4.8-0.1c0,0,0,0,0,0l0,0c-1.9-1.1-6.3-1.2-7.6,0.6c0.6-2,5.9-2.2,7.6-0.7
+			c-0.6-0.7-1.2-0.9-2.1-1.2c0.5,0.1,1.5,0.2,2,0.7c-0.4-0.7-1.2-1.2-1.9-1.7c0.7,0.3,2.1,0.9,2.2,1.9c1.9-3,2.4-4.3,3.4-7
+			C69.7,118.3,70.3,117.3,71.2,115.4L71.2,115.4z"/>
+		<path id="latica12" class="st7" d="M71.8,116.6c0.1,2.1,0.2,2.8,1.3,4.3c0.9,2.4,1.4,3.6,3,6.3c-1.1-0.5-3.2,0.3-2.9,1.1c0.3-0.7,1.5-1,2.5-1
+			c-0.7,0.1-1.3,0.8-1.6,1.2c0.7-0.5,1.3-1,2.2-1.1l0,0c-2.1,0.7-3,3.5-2.5,5.6c-0.1-2.2,0.5-4.4,2.5-5.6l0,0
+			c-1.4,1.2-1.7,2.5-1,4.2c-0.4-1.9-0.2-2.8,1-4.2c0,0,0,0,0,0c-1.1,2.5-1.1,4.8,1.6,6.1c-2.4-1.7-2.3-3.3-1.6-6.1c0,0,0,0,0,0
+			c0,1.7,0,2.2,0.9,3.8c-0.5-1.4-0.5-2.4-0.8-3.8c0,0,0,0,0,0c1.1,1.4,1.2,1.5,2,3.3c-0.5-1.9-0.5-2.1-2-3.3c0,0,0,0,0,0
+			c2,1,3.1,1.8,3.9,3.9c-0.5-2.3-1.8-3.3-3.9-4c0,0,0,0,0,0c2.4,0.2,4.8,1.1,6.3,3.2c-1.1-2.3-3.8-3.3-6.3-3.2c0,0,0,0,0,0
+			c1.3-0.2,3-0.1,4.2,0.1c-1.2-0.4-3-0.8-4.3-0.1c0,0,0,0,0,0l0,0c1.7-1,5.6-1,6.7,0.7c-0.5-1.8-5.2-2-6.7-0.7
+			c0.5-0.6,1.1-0.7,1.9-1.1c-0.5,0-1.4,0.2-1.8,0.6c0.4-0.6,1.1-1.1,1.7-1.5c-0.6,0.2-1.9,0.8-2,1.7c-1.6-2.7-2.1-3.8-2.9-6.2
+			C73.2,119.1,72.7,118.2,71.8,116.6L71.8,116.6z"/>
+		<g>
+			<path id="latica13" class="st7" d="M65.2,110.5c-1.1-1.3-1.3-2.1-1.4-3.6c-0.7-2-1.7-4.4-2.4-6.3c-0.6-1.5-1.3-3-2-4.5c-0.1,1-1.2,1.5-2,1.8
+				c1-0.6,1.6-1,1.9-2l0,0c-2.1,2.8-6.9,1-7.9-1.6c0.3,0.5,0.5,0.8,0.9,1.2c1.7,1.5,4.2,2.2,6.2,1c-1.6,0.8-4.3,0.7-5-1.1
+				c1.3,1.7,4.1,1.7,5.8,0.5l0,0c0,0,0,0,0,0c-2.8,1.2-4.9,0.5-6.2-2.3c1.5,2.3,2.9,2.9,5.1,2.5c-2.2,0.1-4.6-2.1-4.6-4.5
+				c0.4,2,1.9,3.8,3.8,4.2c-1.2-0.5-2.2-1.7-2.2-2.9c0.5,1.8,2.2,3.1,4.1,2.9l0,0c-1.9-0.2-3.5-1.9-3.9-3.7l-0.1-1.2
+				c0.6,2.4,1.6,4.1,4,4.9c0,0,0,0,0,0c-1.4-1-1.6-1.4-2.4-3.1c0.9,1.4,1.4,1.9,2.4,3.1c0,0,0,0,0,0c-0.2-0.9-0.4-1.7-0.7-2.6
+				c0.8,1.1,0.9,1.3,0.8,2.6c0,0,0,0,0,0c0.5-2.2-0.7-5.1-2.5-6.3c2.2,0.8,3.4,4.6,2.6,6.3c0,0,0,0,0,0c0.7-1.4,0.6-2.5,0.3-4
+				c0.6,1.4,0.8,2.8-0.3,4.1c0,0,0,0,0,0c1.6-1.8,1.4-3.3,0.8-5.6c1,2,1.2,4-0.7,5.5c2.2-1.7,2.6-5,1.2-7.3c1.6,1.7,1.4,5.1-0.3,6.7
+				c1.6-1.3,2-3.1,1.7-5.4c0.8,2.6,0,5.1-2.6,6.1c3-0.9,5.2-4.5,5.1-7.6c0.6,2.7-1.6,6.5-4.2,7.4c2-0.6,3.4-2,4.2-4
+				c-0.5,2.4-2.5,4.2-5,4.2c1.2,0.2,2.4-0.1,3.5-0.6c-1.1,0.7-2.4,1.3-3.6,0.6c0.7,1.6,1.5,3.2,2.1,4.7c0.7,1.9,1.8,4.3,2.5,6.3
+				C64.9,108.1,65.2,108.9,65.2,110.5L65.2,110.5z"/>
+			<path id="latica14" class="st7" d="M66.2,111c-1.7-0.5-2.6-0.3-4,0.3c-3.4,0.8-6,2-10,2.4l-0.5,0c0.8-0.4,0.9-1.1,1-2.1
+				c-0.5,1.2-0.6,1.6-1.5,2.1l0,0c1.2-1,1.6-2.8,1.1-4.3c0.1,0.9,0,1.8-0.3,2.7c0.2-1.6-1.3-3.6-3-4.4l-1.6-0.5l1.5,0.6
+				c1.8,0.9,3.5,3.1,2.7,5c0.4-1.2-0.1-2.7-1.5-3.4c1.2,1.1,1.5,2,1.2,3.3c0.1-1.4-1.2-3.1-2.5-3.6l-1.1-0.3c2,0.8,3.9,2.4,3.3,4.7
+				c0.3-2.1-1.8-4.4-3.7-3.9c1.9,0.1,3.2,1.4,3.6,3.2c-0.7-2.1-3.7-3.6-5.5-2.1c2.3-1.1,4.9,0.5,5.5,2.8c0,0,0,0,0,0
+				c-1.1-1.9-4.4-2.4-5.9-0.9c1.6-0.9,3.8-0.7,5.2,0.4c-1.4-0.7-4.5-0.9-6,1l0.4-0.3c1.5-1.1,5.1-1.3,6.3,0.1c0,0,0,0,0,0
+				c-1.4-0.8-2.5-0.2-3.9,0.5c1.6-0.5,2.4-0.8,3.9-0.5c0,0,0,0,0,0c0,0,0,0,0,0c-1.7,0.8-2.7,0.8-4.6,1.1c2,0.1,3,0.1,4.6-1
+				c0,0,0,0,0,0c-0.7,0.8-1.6,1.4-2.7,1.3c0.9,0.6,2.3-0.3,2.8-1.3c0,0,0,0,0,0c0,0,0,0,0,0.1c-1.1,2-3.5,3-5.7,1.9
+				c1.8,1.6,4.7,0.4,5.6-1.5c-0.9,2.5-3.5,3.8-5.9,4.3l1.1,0c2-0.3,4.7-2.2,5-4.4c0.1,1.9-1.3,3.3-2.9,4.2c1.5-0.5,3.1-2,3.1-3.6
+				c0,0.1,0,0.2,0.1,0.4c0,1.9-1.3,3.8-3.1,4.2c1.2,0,2.5-1.2,3.1-2.6c-0.3,1.6-1.3,2.9-3.4,3.2c2.5,0.2,4-2.1,3.7-4.5
+				c0-0.3,0-0.6-0.1-0.8c0.9,2.4-0.1,5.2-2.3,6.5l-0.8,0.4c1-0.3,1.4-0.5,2.2-1.2c1.5-1.4,1.9-4.5,0.9-6.1c1.1,1.5,1.9,3.7,1,5.4
+				c1.4-1.5,0.2-4.5-1.3-5.7c0.8,0.4,1.2,1.1,1.8,1.8c-0.2-0.5-0.7-1.6-1.4-1.9l0.6,0c4-0.4,6.6-1.6,10-2.4
+				C63.7,111.7,64.5,111.6,66.2,111L66.2,111z M51.2,113.6L51.2,113.6L51.2,113.6L51.2,113.6L51.2,113.6z"/>
+			<path id="latica15" class="st7" d="M65.2,110.8c-1.6-1.7-2.2-2.3-4.2-2.8c-2.5-1.4-3.7-2.1-7.1-3.3c1.2-0.4,2.5-2.5,1.7-3
+				c0.3,0.8-0.5,2-1.4,2.6c0.5-0.6,0.6-1.6,0.5-2.2c-0.2,1-0.5,1.8-1.1,2.5l0,0c1.3-2.2,0-5.2-1.9-6.6c1.7,1.8,2.7,4.1,1.9,6.6l0,0
+				c0.4-2-0.3-3.4-2.2-4.3c1.7,1.3,2.1,2.2,2.2,4.3c0,0,0,0,0,0c-0.9-2.9-2.5-4.9-5.7-4.1c3.3-0.2,4.4,1.2,5.7,4.1c0,0,0,0,0,0
+				c-1.2-1.4-1.6-1.9-3.4-2.6c1.4,0.8,2.2,1.7,3.4,2.7c0,0,0,0,0,0c-2-0.4-2.1-0.4-4.1-1.4c1.8,1.3,2,1.5,4.1,1.4c0,0,0,0,0,0
+				c-2.4,0.6-4,0.6-6.2-0.6c2,1.6,3.9,1.5,6.2,0.6c0,0,0,0,0,0c-2.3,1.5-5,2.5-7.7,1.7c2.6,1.1,5.7,0.1,7.7-1.7c0,0,0,0,0,0
+				c-0.9,1.1-2.5,2.2-3.7,2.9c1.3-0.5,3.2-1.5,3.7-2.9c0,0,0,0,0,0l0,0c-0.8,2-4.1,4.8-6.3,4.3c1.8,1.2,5.9-2,6.3-4.2
+				c0,0.9-0.4,1.4-0.9,2.3c0.4-0.4,1-1.1,1.1-1.8c0.1,0.8-0.2,1.7-0.4,2.5c0.4-0.7,1-2,0.5-2.8c3.3,1.2,4.5,1.8,7,3.2
+				C62.2,109.5,63.2,109.9,65.2,110.8L65.2,110.8z"/>
+			<path id="latica16" class="st7" d="M66.8,112.8c-1.1-2.5-1.5-3.4-3.6-4.8c-2.2-2.6-3.3-3.8-6.6-6.5c1.5,0.1,3.8-1.8,3.1-2.7
+				c0,1.1-1.4,2-2.6,2.4c0.8-0.5,1.3-1.5,1.5-2.2c-0.7,1-1.2,1.8-2.3,2.4l0,0c2.3-1.9,2.1-5.7,0.5-8.1c1.2,2.7,1.4,5.7-0.5,8.1l0,0
+				c1.3-2.1,1-3.9-0.7-5.7c1.3,2.2,1.5,3.3,0.7,5.7c0,0,0,0,0,0c0.2-3.6-0.8-6.4-4.7-6.8c3.7,1,4.4,3,4.7,6.8c0,0,0,0-0.1,0
+				c-0.8-2.1-1-2.8-2.8-4.3c1.2,1.5,1.8,2.7,2.7,4.3c0,0,0,0,0,0c-2-1.2-2.2-1.3-4-3.2c1.4,2.1,1.6,2.4,4,3.2c0,0,0,0,0,0
+				c-2.9-0.3-4.6-0.9-6.6-3.1c1.6,2.6,3.7,3.2,6.6,3.2c0,0,0,0,0,0.1c-3.1,0.8-6.5,0.8-9.2-1.1c2.4,2.3,6.3,2.4,9.2,1.1c0,0,0,0,0,0
+				c-1.5,0.9-3.7,1.5-5.3,1.8c1.6,0,4.1-0.4,5.3-1.8c0,0,0,0,0,0l0,0c-1.6,2-6.4,3.8-8.6,2.2c1.5,2,7.4,0.2,8.7-2.2
+				c-0.4,1-1,1.4-1.8,2.2c0.6-0.3,1.6-0.8,1.9-1.6c-0.2,1-0.8,1.8-1.4,2.6c0.7-0.6,1.9-1.9,1.7-2.9c3.2,2.6,4.3,3.8,6.5,6.4
+				C64,110.2,65,111.1,66.8,112.8L66.8,112.8z"/>
+			<path id="latica17" class="st7" d="M66,110c-1.3,2.1-1.8,2.8-3.8,3.7c-2.3,2-3.4,2.9-6.7,4.8c1.3,0.1,3.1,2.1,2.4,2.8c0.1-0.9-0.9-1.9-1.9-2.4
+				c0.6,0.5,0.9,1.5,1,2.2c-0.4-1-0.8-1.8-1.6-2.4l0,0c1.8,2,1,5.3-0.7,7.2c1.4-2.2,2-4.8,0.7-7.2l0,0c0.8,2,0.3,3.6-1.4,4.9
+				c1.5-1.7,1.8-2.7,1.4-4.9c0,0,0,0,0,0c-0.3,3.2-1.6,5.5-5.1,5.3c3.4-0.4,4.3-2.1,5.1-5.3c0,0,0,0,0,0c-1,1.7-1.2,2.3-3,3.4
+				c1.2-1.1,1.9-2.2,3-3.4c0,0,0,0,0,0c-2,0.8-2.1,0.8-4,2.2c1.6-1.7,1.8-1.9,3.9-2.3c0,0,0,0,0,0c-2.6-0.1-4.2,0.1-6.3,1.8
+				c1.8-2.1,3.7-2.3,6.3-1.8c0,0,0,0,0,0c-2.6-1.2-5.6-1.6-8.3-0.3c2.5-1.7,5.8-1.2,8.3,0.3c0,0,0,0,0,0c-1.2-1-3-1.8-4.4-2.3
+				c1.4,0.3,3.6,0.9,4.4,2.3c0,0,0,0,0,0l0,0c-1.2-2-5.1-4.2-7.3-3.2c1.6-1.5,6.5,0.9,7.3,3.1c-0.2-0.9-0.7-1.4-1.3-2.2
+				c0.5,0.3,1.3,1,1.5,1.7c0-0.9-0.5-1.7-0.9-2.5c0.5,0.6,1.4,1.9,1.1,2.8c3.2-1.8,4.3-2.7,6.6-4.7C63.1,111.8,64.1,111.2,66,110
+				L66,110z"/>
+			<path id="latica18" class="st7" d="M65.3,110.5c-1.8-0.6-2.4-0.9-4.1-0.5c-2.4-0.1-3.5-0.1-6.4,0.3c0.8-0.7,0.9-2.8,0.1-2.9
+				c0.5,0.5,0.3,1.6,0,2.4c0.1-0.6-0.2-1.4-0.4-1.8c0.2,0.8,0.3,1.5,0.1,2.3l0,0c0.2-2.1-1.9-3.8-3.9-4.1c1.9,0.7,3.5,2,3.9,4.1l0,0
+				c-0.5-1.6-1.5-2.4-3.2-2.4c1.7,0.4,2.4,0.8,3.2,2.4c0,0,0,0,0,0c-1.7-1.8-3.6-2.7-5.7-0.9c2.3-1.4,3.6-0.8,5.7,0.9c0,0,0,0,0,0
+				c-1.4-0.6-1.9-0.8-3.5-0.6c1.3,0.1,2.2,0.4,3.5,0.7c0,0,0,0,0,0c-1.6,0.4-1.7,0.5-3.5,0.5c1.8,0.3,2,0.3,3.5-0.5c0,0,0,0,0,0
+				c-1.6,1.3-2.7,1.9-4.7,1.9c2.1,0.4,3.4-0.3,4.8-1.8c0,0,0,0,0,0c-1.1,2-2.7,3.7-5,4.1c2.3-0.1,4.2-2,5-4.1c0,0,0,0,0,0
+				c-0.3,1.2-1,2.6-1.6,3.5c0.8-0.9,1.8-2.3,1.6-3.5c0,0,0,0,0,0l0,0c0.2,1.8-1.2,5.1-3,5.4c1.7,0.2,3.6-3.7,3-5.4
+				c0.3,0.7,0.2,1.2,0.2,2c0.1-0.4,0.3-1.2,0.1-1.7c0.4,0.6,0.5,1.3,0.7,2c0-0.6,0-1.9-0.7-2.3c2.9-0.4,4-0.4,6.3-0.2
+				C62.7,110.7,63.6,110.6,65.3,110.5L65.3,110.5z"/>
+		</g>
+	</g>
+</g>
+<path id="latica8" class="st8" d="M72.8,115.5c1-0.7,1.7-0.8,2.7-0.7c2.5-0.2,4.5,0,7.3-0.7l0.3-0.1c-0.6-0.1-0.9-0.5-1.2-1.2
+	c0.6,0.7,0.7,0.9,1.5,1.1l0,0c-1-0.4-1.7-1.5-1.7-2.6c0.2,0.6,0.4,1.2,0.8,1.7c-0.5-1.1,0-2.8,1-3.7l1-0.7l-0.9,0.8
+	c-1,1-1.6,2.9-0.7,4c-0.6-0.7-0.6-1.8,0.2-2.6c-0.5,1-0.6,1.7-0.1,2.5c-0.4-1,0.1-2.4,0.9-3l0.7-0.4c-1.2,1-2.1,2.6-1.1,4
+	c-0.7-1.4,0.2-3.4,1.6-3.5c-1.3,0.5-1.8,1.7-1.7,3c0-1.6,1.6-3.3,3.2-2.7c-1.8-0.2-3.2,1.5-3.1,3.2c0,0,0,0,0,0
+	c0.3-1.5,2.4-2.6,3.8-2c-1.3-0.2-2.7,0.4-3.4,1.5c0.8-0.8,2.8-1.6,4.3-0.7l-0.4-0.1c-1.3-0.4-3.7,0.3-4.2,1.5c0,0,0,0,0,0
+	c0.8-0.8,1.7-0.7,2.7-0.5c-1.2,0-1.8,0-2.7,0.6c0,0,0,0,0,0c0,0,0,0,0,0c1.3,0.1,2-0.1,3.3-0.3c-1.3,0.5-2,0.8-3.3,0.4c0,0,0,0,0,0
+	c0.7,0.4,1.4,0.6,2.1,0.3c-0.4,0.6-1.6,0.3-2.2-0.2c0,0,0,0,0,0c0,0,0,0,0,0c1.2,1.1,3.1,1.2,4.3,0c-0.8,1.5-3.1,1.4-4.1,0.3
+	c1.1,1.5,3.2,1.8,5,1.5l-0.8,0.2c-1.4,0.2-3.7-0.4-4.4-1.8c0.4,1.3,1.6,1.9,2.9,2.2c-1.1,0-2.5-0.7-2.9-1.7c0,0.1,0,0.2,0,0.2
+	c0.4,1.3,1.8,2.2,3.1,2.1c-0.8,0.3-2-0.2-2.7-1c0.6,1,1.6,1.7,3.1,1.4c-1.7,0.7-3.2-0.5-3.5-2.2c-0.1-0.2-0.1-0.4-0.1-0.6
+	c0,1.8,1.3,3.5,3,3.9l0.6,0.1c-0.7,0-1.1,0-1.7-0.3c-1.3-0.6-2.3-2.6-2-3.9c-0.4,1.2-0.4,2.9,0.5,3.9c-1.3-0.7-1.2-3-0.5-4.2
+	c-0.5,0.4-0.6,1-0.8,1.6c0-0.4,0.1-1.3,0.5-1.6l-0.4,0.1c-2.8,0.7-4.8,0.5-7.3,0.7C74.5,115.4,74,115.6,72.8,115.5L72.8,115.5z
+	 M83.4,113.8L83.4,113.8L83.4,113.8L83.4,113.8L83.4,113.8z"/>
+            </g>
+</svg>
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="section" id="section3">
+
+        <div class="tekst2">
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor eros non iaculis volutpat. Nam iaculis at libero vel cursus. Proin mollis ligula libero, at finibus felis bibendum vel. Donec in risus malesuada, rutrum lacus sodales, blandit mauris. </p>
+
+
+
+        </div>
+
+
+        <div id="asd2">
+            <img id="ring" src="img/rings.svg" class="pos">
+</div>
+
+
+
+    </div>
+
+    <div  class="section" id="section4">
+
+        <div class="tekst">
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor eros non iaculis volutpat. Nam iaculis at libero vel cursus. Proin mollis ligula libero, at finibus felis bibendum vel. Donec in risus malesuada, rutrum lacus sodales, blandit mauris. </p>
+
+        </div>
+
+            <div class="image">
+                   <img src="img/root.jpg" class="clip-svg">
+            </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<script src="js/ScrollingControlFunctions.js"></script>
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/ShapeDown.js"></script>
+<script src="js/ShapeRight.js"></script>
+<script src="js/ShapeLeft.js"></script>
+<script src="js/ShapeUp.js"></script>
+<script src="js/easings.js"></script>
+<script src="js/three.js"></script>
+<script src="js/Projector.js"></script>
+<script src="js/CanvasRenderer.js"></script>
+<script src="js/Bird.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+
+
+<script>
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    var Boid = function() {
+
+        var vector = new THREE.Vector3(),
+            _acceleration, _width = 500, _height = 500, _depth = 200, _goal, _neighborhoodRadius = 100,
+            _maxSpeed = 4, _maxSteerForce = 0.1, _avoidWalls = false;
+
+        this.position = new THREE.Vector3();
+        this.velocity = new THREE.Vector3();
+        _acceleration = new THREE.Vector3();
+
+        this.setGoal = function ( target ) {
+
+            _goal = target;
+
+        };
+
+        this.setAvoidWalls = function ( value ) {
+
+            _avoidWalls = value;
+
+        };
+
+        this.setWorldSize = function ( width, height, depth ) {
+
+            _width = width;
+            _height = height;
+            _depth = depth;
+
+        };
+
+        this.run = function ( boids ) {
+
+            if ( _avoidWalls ) {
+
+                vector.set( - _width, this.position.y, this.position.z );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+                vector.set( _width, this.position.y, this.position.z );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+                vector.set( this.position.x, - _height, this.position.z );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+                vector.set( this.position.x, _height, this.position.z );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+                vector.set( this.position.x, this.position.y, - _depth );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+                vector.set( this.position.x, this.position.y, _depth );
+                vector = this.avoid( vector );
+                vector.multiplyScalar( 5 );
+                _acceleration.add( vector );
+
+            }/* else {
+
+						this.checkBounds();
+
+					}
+					*/
+
+            if ( Math.random() > 0.5 ) {
+
+                this.flock( boids );
+
+            }
+
+            this.move();
+
+        };
+
+        this.flock = function ( boids ) {
+
+            if ( _goal ) {
+
+                _acceleration.add( this.reach( _goal, 0.005 ) );
+
+            }
+
+            _acceleration.add( this.alignment( boids ) );
+            _acceleration.add( this.cohesion( boids ) );
+            _acceleration.add( this.separation( boids ) );
+
+        };
+
+        this.move = function () {
+
+            this.velocity.add( _acceleration );
+
+            var l = this.velocity.length();
+
+            if ( l > _maxSpeed ) {
+
+                this.velocity.divideScalar( l / _maxSpeed );
+
+            }
+
+            this.position.add( this.velocity );
+            _acceleration.set( 0, 0, 0 );
+
+        };
+
+        this.checkBounds = function () {
+
+            if ( this.position.x >   _width ) this.position.x = - _width;
+            if ( this.position.x < - _width ) this.position.x =   _width;
+            if ( this.position.y >   _height ) this.position.y = - _height;
+            if ( this.position.y < - _height ) this.position.y =  _height;
+            if ( this.position.z >  _depth ) this.position.z = - _depth;
+            if ( this.position.z < - _depth ) this.position.z =  _depth;
+
+        };
+
+        //
+
+        this.avoid = function ( target ) {
+
+            var steer = new THREE.Vector3();
+
+            steer.copy( this.position );
+            steer.sub( target );
+
+            steer.multiplyScalar( 1 / this.position.distanceToSquared( target ) );
+
+            return steer;
+
+        };
+
+        this.repulse = function ( target ) {
+
+            var distance = this.position.distanceTo( target );
+
+            if ( distance < 150 ) {
+
+                var steer = new THREE.Vector3();
+
+                steer.subVectors( this.position, target );
+                steer.multiplyScalar( 0.5 / distance );
+
+                _acceleration.add( steer );
+
+            }
+
+        };
+
+        this.reach = function ( target, amount ) {
+
+            var steer = new THREE.Vector3();
+
+            steer.subVectors( target, this.position );
+            steer.multiplyScalar( amount );
+
+            return steer;
+
+        };
+
+        this.alignment = function ( boids ) {
+
+            var count = 0;
+            var velSum = new THREE.Vector3();
+
+            for ( var i = 0, il = boids.length; i < il; i++ ) {
+
+                if ( Math.random() > 0.6 ) continue;
+
+                var boid = boids[ i ];
+                var distance = boid.position.distanceTo( this.position );
+
+                if ( distance > 0 && distance <= _neighborhoodRadius ) {
+
+                    velSum.add( boid.velocity );
+                    count++;
+
+                }
+
+            }
+
+            if ( count > 0 ) {
+
+                velSum.divideScalar( count );
+
+                var l = velSum.length();
+
+                if ( l > _maxSteerForce ) {
+
+                    velSum.divideScalar( l / _maxSteerForce );
+
+                }
+
+            }
+
+            return velSum;
+
+        };
+
+        this.cohesion = function ( boids ) {
+
+            var count = 0;
+            var posSum = new THREE.Vector3();
+            var steer = new THREE.Vector3();
+
+            for ( var i = 0, il = boids.length; i < il; i ++ ) {
+
+                if ( Math.random() > 0.6 ) continue;
+
+                var boid = boids[ i ];
+                var distance = boid.position.distanceTo( this.position );
+
+                if ( distance > 0 && distance <= _neighborhoodRadius ) {
+
+                    posSum.add( boid.position );
+                    count++;
+
+                }
+
+            }
+
+            if ( count > 0 ) {
+
+                posSum.divideScalar( count );
+
+            }
+
+            steer.subVectors( posSum, this.position );
+
+            var l = steer.length();
+
+            if ( l > _maxSteerForce ) {
+
+                steer.divideScalar( l / _maxSteerForce );
+
+            }
+
+            return steer;
+
+        };
+
+        this.separation = function ( boids ) {
+
+            var posSum = new THREE.Vector3();
+            var repulse = new THREE.Vector3();
+
+            for ( var i = 0, il = boids.length; i < il; i ++ ) {
+
+                if ( Math.random() > 0.6 ) continue;
+
+                var boid = boids[ i ];
+                var distance = boid.position.distanceTo( this.position );
+
+                if ( distance > 0 && distance <= _neighborhoodRadius ) {
+
+                    repulse.subVectors( this.position, boid.position );
+                    repulse.normalize();
+                    repulse.divideScalar( distance );
+                    posSum.add( repulse );
+
+                }
+
+            }
+
+            return posSum;
+
+        }
+
+    }
+
+</script>
+
+<script>
+
+    var SCREEN_WIDTH = window.innerWidth,
+        SCREEN_HEIGHT = window.innerHeight,
+        SCREEN_WIDTH_HALF = SCREEN_WIDTH  / 2,
+        SCREEN_HEIGHT_HALF = SCREEN_HEIGHT / 2;
+
+    var camera, scene, renderer,
+        birds, bird;
+
+    var boid, boids;
+
+
+
+    init();
+    animate();
+
+    function init() {
+
+        camera = new THREE.PerspectiveCamera( 100, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 5000 );
+        camera.position.z = 400;
+
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(  0xffffff );
+
+        birds = [];
+        boids = [];
+
+        for ( var i = 0; i < 40; i ++ ) {
+
+            boid = boids[ i ] = new Boid();
+            boid.position.x = Math.random() * 400 - 200;
+            boid.position.y = Math.random()   -100 ;
+            boid.position.z = Math.random() * 100 - 100;
+            boid.velocity.x = Math.random() * 2 - 1;
+            boid.velocity.y = Math.random() * 2 - 1;
+            boid.velocity.z = Math.random() * 2 - 1;
+            boid.setAvoidWalls( true );
+            boid.setWorldSize( 400,400, 300 );
+
+            bird = birds[ i ] = new THREE.Mesh( new Bird(), new THREE.MeshBasicMaterial( { color:Math.random() * 0xffffff, side: THREE.DoubleSide } ) );
+            bird.phase = Math.floor( Math.random() * 62.83 );
+            scene.add( bird );
+
+
+        }
+
+        var canvas = document.getElementById("mycanvas");
+        renderer = new THREE.CanvasRenderer({ canvas: canvas });
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+        document.body.appendChild( renderer.domElement );
+
+
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
+
+    function onDocumentMouseMove( event ) {
+
+        var vector = new THREE.Vector3( event.clientX - SCREEN_WIDTH_HALF, - event.clientY + SCREEN_HEIGHT_HALF, 0 );
+
+        for ( var i = 0, il = boids.length; i < il; i++ ) {
+
+            boid = boids[ i ];
+
+            vector.z = boid.position.z;
+
+            boid.repulse( vector );
+
+        }
+
+    }
+
+    //
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+
+
+        render();
+
+
+    }
+
+    function render() {
+
+        for ( var i = 0, il = birds.length; i < il; i++ ) {
+
+            boid = boids[ i ];
+            boid.run( boids );
+
+            bird = birds[ i ];
+            bird.position.copy( boids[ i ].position );
+
+            var color = bird.material.color;
+            color.r = color.g = color.b = ( 500 - bird.position.z ) / 1000;
+
+            bird.rotation.y = Math.atan2( - boid.velocity.z, boid.velocity.x );
+            bird.rotation.z = Math.asin( boid.velocity.y / boid.velocity.length() );
+
+            bird.phase = ( bird.phase + ( Math.max( 0, bird.rotation.z ) + 0.1 )  ) % 62.83;
+            bird.geometry.vertices[ 5 ].y = bird.geometry.vertices[ 4 ].y = Math.sin( bird.phase ) * 5;
+
+        }
+
+        renderer.render( scene, camera );
+
+    }
+
+</script>
+
+
+
+
+</body>
+</html>
