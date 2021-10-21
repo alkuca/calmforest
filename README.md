@@ -16,12 +16,3 @@
 <img src="https://res.cloudinary.com/dgq3h1sri/image/upload/v1634815304/Github%20images/screencapture-alkuca-github-io-calmforest-2021-10-21-12_09_03.png" alt="Dashboard">
 <br />
 <br />
-
-### Korištenje tehnologije
-PERN Stack
-
-### Svrha aplikacije
-<p>
-Aplikacija pruža korisniku pregled proizvoda koji su trenutno dostupni za iznajmljivanje.
-Također korisnik ima opciju dodavanja i objavljivanja svoj vlastitih proizvoda.
-</p>
